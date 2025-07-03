@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+@layer base {
+  :root {
+    --background: 45 25% 95%;
+    --foreground: 25 15% 25%;
+    --card: 45 25% 97%;
+    --card-foreground: 25 15% 25%;
+    --popover: 45 25% 97%;
+    --popover-foreground: 25 15% 25%;
+    --primary: 35 45% 55%;
+    --primary-foreground: 45 25% 95%;
+    --secondary: 40 20% 85%;
+    --secondary-foreground: 25 15% 35%;
+    --muted: 40 20% 90%;
+    --muted-foreground: 25 10% 45%;
+    --accent: 40 20% 85%;
+    --accent-foreground: 25 15% 35%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 15% 80%;
+    --input: 40 15% 80%;
+    --ring: 35 45% 55%;
+    --radius: 0.5rem;
+    --warm-cream: 45 25% 95%;
+    --warm-brown: 25 15% 25%;
+    --warm-beige: 40 20% 85%;
+    --warm-gold: 35 45% 55%;
+    --warm-champagne: 42 30% 88%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-warm-cream text-warm-brown font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-playfair);
+  }
+  .font-sans {
+    font-family: var(--font-inter);
+  }
+  .bg-warm-cream {
+    background-color: hsl(var(--warm-cream));
+  }
+  .text-warm-brown {
+    color: hsl(var(--warm-brown));
+  }
+  .bg-warm-beige {
+    background-color: hsl(var(--warm-beige));
+  }
+  .text-warm-gold {
+    color: hsl(var(--warm-gold));
+  }
+  .bg-warm-gold {
+    background-color: hsl(var(--warm-gold));
+  }
+  .border-warm-beige {
+    border-color: hsl(var(--warm-beige));
+  }
+  .bg-warm-champagne {
+    background-color: hsl(var(--warm-champagne));
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--warm-beige));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--warm-gold));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(35 50% 50%);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Image loading animation */
+.image-loading {
+  background: linear-gradient(90deg, hsl(var(--warm-beige)) 25%, hsl(var(--warm-cream)) 50%, hsl(var(--warm-beige)) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
